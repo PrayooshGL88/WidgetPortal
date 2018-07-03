@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.8.26/zone.js"></script>
+
+    <!-- Rx -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.0.0/rxjs.umd.js"></script>
+
+    <!-- Angular Packages -->
+    <script src="https://unpkg.com/@angular/core@6.0.6/bundles/core.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@angular/common@6.0.6/bundles/common.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@angular/platform-browser@6.0.6/bundles/platform-browser.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@angular/elements@6.0.7/bundles/elements.umd.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#">Home</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-log-in"></span> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="widgetDiv"></div>
+</body>
+<script>
+    setTimeout(() => {
+        addWidgets("user-poll", "https://cdn.rawgit.com/PrayooshGL88/55c95366df13182b84e75ba3e4a42b2b/raw/4ae92ac41fc055263ad2799ff7c6bf44c930e15e/user-poll.js");
+        addWidgets("dummy-vote", "https://cdn.rawgit.com/PrayooshGL88/f038fadc57c559c5e93ec865bef9bd3a/raw/acffe2b7d5bc52f57d80eee724a098716434acae/framework-vote.js");
+    }, 2000);
+
+    function addWidgets(tag, path) {
+        var divElm = document.createElement("div");
+        var script = document.createElement("script");
+        script.src = path;
+        var htmlTag = document.createElement(tag);
+        var elm = document.getElementById("widgetDiv");
+        divElm.appendChild(htmlTag);
+        divElm.appendChild(script);
+        elm.appendChild(divElm);
+    }
+</script>
+
+</html>
+
+<!-- https://www.npmjs.com/package/ngx-build-plus -->
